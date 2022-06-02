@@ -8,7 +8,7 @@
 #include "Agent.h"
 #include "StateMachine.h"
 #include <LinearAlgebra.h>
-#include "ext/pixelgridworld/include/pixelgridworld/core.h"
+#include "core.h"
 
 namespace TowerDefense
 {

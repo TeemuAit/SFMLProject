@@ -1,7 +1,6 @@
-
 #pragma once
 #include <StateMachine.h>
-#include <pixelgridworld/core.h>
+#include <core.h>
 #include <LinearAlgebra.h>
 #include <map>
 
@@ -38,7 +37,7 @@ ActionId getFirstAction(SearchNode* node)
 }
 
 template<typename GetNextStatesFunc, typename FcostFunc, typename GCostFunc>
-auto astar(std::vector<SearchNode*>& openList,GetNextStatesFunc makeAllActions, FcostFunc getFCost, GCostFunc getGCost, const core::Vector& initialState, const core::Vector& endState)
+std::vector<SearchNode*> astar(std::vector<SearchNode*>& openList, GetNextStatesFunc makeAllActions, FcostFunc getFCost, GCostFunc getGCost, const core::Vector& initialState, const core::Vector& endState)
 {
     std::map<core::Vector, bool> closedList;
     openList.push_back(new SearchNode(StateAction{ initialState, 0 }));
@@ -62,6 +61,7 @@ auto astar(std::vector<SearchNode*>& openList,GetNextStatesFunc makeAllActions, 
         openList.erase(openList.begin() + minIndex, openList.begin() + minIndex + 1);
         closedList[currentNode->stateAction.state] = true;
 
+        // EXIT: arrived at the endState, return entire path towards it
         if (currentNode->stateAction.state == endState)
         {
             return std::vector<SearchNode*>({ currentNode });
@@ -103,12 +103,6 @@ auto astar(std::vector<SearchNode*>& openList,GetNextStatesFunc makeAllActions, 
         }
 
     }
-
-    for (size_t i = 0; i < 7; ++i)
-    {
-
-    }
-    return openList;
 }
 template<typename GetNextStatesFunc>
 auto breadthFirstSearch(GetNextStatesFunc makeAllActions, const core::Vector& initialState, const core::Vector& endState)

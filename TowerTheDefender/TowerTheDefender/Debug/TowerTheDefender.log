@@ -1,2 +1,5 @@
-﻿  TowerTheDefender.cpp
-  TowerTheDefender.vcxproj -> C:\Users\teeai\Desktop\SFMLProject\TowerTheDefender\Debug\TowerTheDefender.exe
+﻿  Animation.cpp
+  Enemy.cpp
+C:\Users\teeai\Desktop\SFMLProject\TowerTheDefender\TowerTheDefender\Agent.h(2,10): fatal error C1083: Cannot open include file: 'StateMachine.h': No such file or directory
+  TowerTheDefender.cpp
+  Generating Code...

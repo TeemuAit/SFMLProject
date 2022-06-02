@@ -1,6 +1,6 @@
 #pragma once
 #include <functional>
-#include <ext/pixelgridworld/include/pixelgridworld/core.h>
+#include <core.h>
 
 // State Machine typedefs
 typedef std::function<core::Vector(core::Vector)> ActionFunction;
@@ -25,6 +25,4 @@ struct StateAction {
     core::Vector    state;
     ActionId        action;
 };
-
-
 

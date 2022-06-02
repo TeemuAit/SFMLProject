@@ -8,7 +8,7 @@ namespace core {
 
     inline Vector vecN(size_t N, int value) {
         Vector res;
-        for(size_t i=0; i<N; ++i) {
+        for (size_t i = 0; i < N; ++i) {
             res.push_back(value);
         }
         return res;
@@ -16,9 +16,9 @@ namespace core {
 
     inline Matrix matN(size_t N, int value) {
         Matrix res;
-        for(size_t i=0; i<N; ++i) {
+        for (size_t i = 0; i < N; ++i) {
             res.push_back(Vector());
-            for(size_t j=0; j<N; ++j) {
+            for (size_t j = 0; j < N; ++j) {
                 res[i].push_back(value);
             }
         }
